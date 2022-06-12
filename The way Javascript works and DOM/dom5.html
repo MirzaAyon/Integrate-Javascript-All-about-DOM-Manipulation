@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #first-title {
+            background-color: blueviolet;
+        }
+
+        /* .blog {
+            border: 2px solid orange;
+            margin: 5px;
+            padding: 5px;
+            border-radius: 10px;
+        } */
+        /* js diye krbo tai egula nai hye jabe */
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>My Awesome Blog</h1>
+    </header>
+    <main>
+        <section id="blogs" class="blogs">
+            <!-- article*3>h3{My Awesome Blog - $}+p>lorem -->
+
+            <header>
+                <h2>Blogs List</h2>
+                <!-- ul>li{Blog - $}*4 -->
+                <ul id="blog-list">
+                    <li>Blog - 1</li>
+                    <li>Blog - 2</li>
+                    <li>Blog - 3</li>
+                    <li>Blog - 4</li>
+                </ul>
+            </header>
+
+            <article class="blog">
+                <h3 id="first-title">My Awesome Blog - 1</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni quas vel cum, labore blanditiis
+                    magnam corrupti quam nulla temporibus aspernatur, ex enim perferendis porro cumque! Aperiam quasi
+                    excepturi atque cumque?</p>
+            </article>
+            <article id="second-blog" class="blog">
+                <h3 id="second-title">My Awesome Blog - 2</h3>
+                <p>Veniam necessitatibus qui aut in ratione corrupti, et maxime doloribus pariatur dolores dolore
+                    excepturi soluta? Rem excepturi, adipisci id deleniti ea accusamus quisquam pariatur illum quidem
+                    voluptate, exercitationem laboriosam animi?</p>
+            </article>
+            <article class="blog">
+                <h3 id="third-title">My Awesome Blog - 3</h3>
+                <p>Ea cum temporibus unde illo neque, vitae labore facilis tempora praesentium, ratione asperiores,
+                    suscipit nisi ab accusamus sunt eveniet optio. Quam voluptate quibusdam cum facere fuga aut ipsam
+                    alias accusamus!</p>
+            </article>
+        </section>
+    </main>
+
+    <script>
+        console.log(document); //document dekhar jonno
+        console.log(document.body); //body dekhar jonno
+
+        const student = {
+            name: 'Ayon', age: 23
+        }
+
+        const blogTitles = document.getElementsByTagName('h3');
+        console.log(blogTitles); //inspact e gele dekha jabe shob h3 array akare ache
+        for (const h3 of blogTitles) {
+            console.log(h3);
+            console.log(h3.innerText);
+        }
+
+        const blogDetails = document.getElementsByTagName('p')
+        console.log(blogDetails);
+        for (const p of blogDetails) {
+            console.log(p);
+            console.log(p.innerText);
+        }
+
+
+
+
+
+
+
+        //getelement by id
+
+        const secondTitle = document.getElementById('second-title').style.color = "yellow";
+        // console.log(secondTitle); eta na dileo hbe eta dile inspact e run hbe screen e kono difference nai
+
+        const thirdTitle = document.getElementById('third-title');
+        thirdTitle.style.color = "blue";
+        thirdTitle.style.textAlign = "center";
+        // thirdTitle.innerText = "Title updated by JS";
+
+        thirdTitle.style.backgroundColor = 'salmon';
+        thirdTitle.style.margin = '10px';
+        thirdTitle.style.padding = '10px';
+        thirdTitle.style.marginLeft = '25px';
+
+        // console.log(thirdTitle);
+
+        //getElements by classname
+
+        const blogs = document.getElementsByClassName('blog');
+        for (const blog of blogs) {
+            // console.log(blog); //inspact e dekhbo
+
+            blog.style.border = '2px solid orange';
+            blog.style.borderRadius = '10px';
+            blog.style.margin = '5px'
+            blog.style.padding = '5px'
+        }
+
+        //query selector
+
+        document.querySelectorAll('p'); //joto paragraph ache shob chole ashbe
+
+        document.querySelectorAll('p');
+
+
+        document.querySelectorAll('#second-blog p'); //second blog er vitore je paragraph ache otake pelam
+
+
+        //create and add element by using javascript
+        //step1: create element
+        const li = document.createElement('li'); //html element create hbe
+
+
+        li.innerText = 'Blog-5'; //eta korle eta website e add hoye jabe na, aro kaj ache
+
+        //step2 where to add
+        //eder parent ke ekta id dibo
+
+        const ul = document.getElementById('blog-list'); //blog list er ul take niye ashche
+
+        //append new element
+
+        ul.appendChild(li);
+
+        //add article
+        //new article banabo
+        const article = document.createElement('article')
+
+        const h3 = document.createElement('h3');
+        h3.innerHTML = 'My Awesome Blog-5'
+
+        const p = document.createElement('p');
+        p.innerText = 'My name is Ayon! I like to draw your kind atttention';
+
+        article.appendChild(h3);
+        article.appendChild(p);
+        //section er vitore dhukabo,id dibo
+        //parent of article ke khujbo
+
+        const blogSection = document.getElementById('blogs');
+        blogSection.appendChild(article);
+
+
+
+
+    </script>
+</body>
+
+</html>
