@@ -44,11 +44,10 @@
 
         // });
         //keyup
-        document.getElementById('delete-confirm').addEventListener('keyup', function () {
-            // console.log('keydown');
-
-            const deleteField = document.getElementById('delete-confirm')
-            console.log(deleteField.value);
+        document.getElementById('delete-confirm').addEventListener('keyup', function (event) {
+            console.log(event.target.value);
+            //box e ja likhbo tar event dhre felbe inspact e 
+            //same
 
         });
         // keyup ta beshi acceptable and eta safe

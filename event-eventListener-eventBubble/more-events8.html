@@ -44,11 +44,13 @@
 
         // });
         //keyup
-        document.getElementById('delete-confirm').addEventListener('keyup', function () {
-            // console.log('keydown');
-
-            const deleteField = document.getElementById('delete-confirm')
-            console.log(deleteField.value);
+        document.getElementById('delete-confirm').addEventListener('keyup', function (event) {
+            const deleteBtn = document.getElementById('delete-btn');
+            if (event.target.value == 'delete') {
+                deleteBtn.removeAttribute('disabled');
+            } else {
+                deleteBtn.setAttribute('disabled', true)
+            }
 
         });
         // keyup ta beshi acceptable and eta safe
