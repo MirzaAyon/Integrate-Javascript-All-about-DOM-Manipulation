@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="clicking-method"></p>
+    <input id="name-field" type="text">
+    <button id="update-name">update</button>
+    <button onclick="handleJustFunctionClick()">
+        Just function
+    </button>
+    <button id="handle-event">
+        direct add event listener
+    </button>
+
+    <script>
+        //using function
+        function handleJustFunctionClick() {
+            const clickingMethod = document.getElementById('clicking-method');
+            clickingMethod.innerText = 'set by using function';
+        }
+
+        //direct
+
+        document.getElementById('handle-event').addEventListener('click', function () {
+            const p = document.getElementById('clicking-method');
+            p.innerText = 'set by direct add event listener';
+        })
+        //direct diye korbo update btn
+
+        document.getElementById('update-name').addEventListener('click', function () {
+            const nameField = document.getElementById('name-field');
+            console.log(nameField); //update e click korle input ta show kortese
+            console.log(nameField.value); //ja likhbo ta inspact e show korbe
+        })
+    </script>
+</body>
+
+</html>
