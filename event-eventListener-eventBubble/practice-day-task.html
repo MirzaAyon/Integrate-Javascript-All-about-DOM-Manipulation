@@ -1,0 +1,25 @@
+<!-- একটা মজার চ্যালেঞ্জ। কোন একটা ইমেজ এর উপরে mouseenter করলে সেই ইমেজটা চেইঞ্জ হয়ে যাবে। একটু গুগলে সার্চ দিয়ে দেখো। জিনিসটা কিভাবে করা যেতে পারে।  -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse over and Mouse out event</title>
+    <script>
+
+        function setNewImage() {
+            document.getElementById('img1').src = "images/tiger.jpg"
+        }
+        function setOldImage() {
+            document.getElementById('img1').src = "images/healthy-food.jpg"
+        }
+    </script>
+</head>
+
+<body>
+    <img id="img1" onmouseover="setNewImage()" onmouseout="setOldImage()" src="images/healthy-food.jpg" alt="">
+</body>
+
+</html>
