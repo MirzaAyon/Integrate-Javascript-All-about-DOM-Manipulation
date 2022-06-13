@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubble</title>
+</head>
+
+<body>
+    <h2>Event Bubble</h2>
+    <section id="section-container">
+        <h4>Bubble List</h4>
+        <!-- ul#list-container>li.item*6>lorem2 -->
+        <ul id="list-container">
+            <li class="item">Lorem, ipsum.</li>
+            <li id="second-item" class="item">Doloribus, reiciendis.</li>
+            <li class="item">Vitae, provident!</li>
+            <li class="item">Et, numquam?</li>
+            <li class="item">Sint, amet.</li>
+            <li class="item">Id, libero!</li>
+        </ul>
+    </section>
+
+    <script>
+        //2nd li
+        document.getElementById('second-item').addEventListener('click', function () {
+            console.log('second item clicked');
+            event.stopPropagation();
+
+            //inspact e 2nd item e click korle show kore
+        })
+
+        //ul
+        document.getElementById('list-container').addEventListener('click', function () {
+            console.log('ul clicked');
+        })//ekhn jokono item ke click korlei ul clicked show korbe sudhu 2nd ta bade
+
+
+        //section container
+        document.getElementById('section-container').addEventListener('click', function () {
+            console.log('section clicked');
+        })
+    </script>
+</body>
+
+</html>
