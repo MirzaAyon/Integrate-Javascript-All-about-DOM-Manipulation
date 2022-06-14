@@ -23,8 +23,14 @@
     <script>
         const items = document.getElementsByClassName('item');
         for (const item of items) {
-            item.addEventListener('click', function () {
-                console.log('remove item') //console e jekno ta click korle remove item dichee
+            item.addEventListener('click', function (event) {
+
+                // document.getElementById('item-container').removeChild(item);
+                // console.log(event.target); //jake click korbo take inspact dekhabe
+                console.log(event.target.parentNode); //full ul take dhorbe click krle
+                //age je jinish ta getElementBy Id diye paisilam ekhn sheta event.target.parentNode diye pelam
+                // event.target
+                event.target.parentNode.removeChild(event.target); //ekhn jake click krbo she chole jabe
 
             });
         } 

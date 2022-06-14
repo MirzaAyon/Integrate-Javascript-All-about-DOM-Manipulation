@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Delegate</title>
+</head>
+
+<body>
+    <h2>Event Delegate</h2>
+    <!-- ul#item-container>li.item*6>lorem2 -->
+    <ul id="item-container">
+        <li class="item">Lorem, ipsum.</li>
+        <li class="item">Architecto, quasi?</li>
+        <li class="item">Expedita, officiis.</li>
+        <li class="item">Ducimus, exercitationem.</li>
+        <li class="item">Atque, ut.</li>
+        <li class="item">Omnis, iste?</li>
+    </ul>
+    <button id="add-item">Add item</button>
+    <script>
+        const items = document.getElementsByClassName('item');
+        for (const item of items) {
+            item.addEventListener('click', function (event) {
+
+                // document.getElementById('item-container').removeChild(item);
+                // console.log(event.target); //jake click korbo take inspact dekhabe
+                console.log(event.target.parentNode); //full ul take dhorbe click krle
+                //age je jinish ta getElementBy Id diye paisilam ekhn sheta event.target.parentNode diye pelam
+                // event.target
+                event.target.parentNode.removeChild(event.target); //ekhn jake click krbo she chole jabe
+
+            });
+        }
+        document.getElementById('add-item').addEventListener('click', function () {
+            const li = document.createElement('li');
+            li.innerText = "Brand New Item";
+            const parent = document.getElementById('item-container');
+            parent.appendChild(li);
+        }) //ekhn Add item e click korle new item add hbe
+        //but new gula remove hbe na
+    </script>
+</body>
+
+</html>

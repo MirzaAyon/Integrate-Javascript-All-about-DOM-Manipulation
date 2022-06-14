@@ -24,8 +24,9 @@
         const items = document.getElementsByClassName('item');
         for (const item of items) {
             item.addEventListener('click', function () {
-                console.log('remove item') //console e jekno ta click korle remove item dichee
-
+                // console.log('remove item') //console e jekno ta click korle remove item dichee
+                document.getElementById('item-container').removeChild(item);
+                //ekhnjake click korbo she chole jabe 
             });
         } 
     </script>
