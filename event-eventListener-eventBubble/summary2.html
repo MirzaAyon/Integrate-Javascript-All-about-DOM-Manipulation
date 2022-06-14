@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Summary</title>
+</head>
+
+<body>
+    <h1 id="mouse-header">More Mouse event</h1>
+    <input id="email-field" type="text" placeholder="Email Address">
+    <button onclick="handleClickGreen()">Click Me : Green</button>
+
+    <script>
+        function handleClickGreen() {
+            document.body.style.backgroundColor = "green";
+        }  //click handler add kora shikhlam
+
+        document.getElementById('email-field').addEventListener('keyup', function (event) {
+            // console.log(event.target); //nspact e pabo,input e kichu dile
+            //jei element take trigger kora hoise shetake dibe
+            console.log(event.target.value); //inspact e value take pabo
+        })
+        //event listener kno add korlam? focus er jonno hole focus, blur er jnno hole blur abr keyup o ache
+
+
+        // document.getElementById('mouse-header').addEventListener('mousemove', function () {
+        //     console.log('mouse is moivng')
+        // }) 
+        //kache gele mouse move korbe
+        // document.getElementById('mouse-header').addEventListener('mouseenter', function () {
+        //     console.log('mouse is entering')
+        // })
+        //mouseenter
+
+
+        document.getElementById('mouse-header').addEventListener('mouseout', function () {
+            console.log('mouse is entering')
+        })//bahire gele show krbe
+        //mouseout
+    </script>
+</body>
+
+</html>

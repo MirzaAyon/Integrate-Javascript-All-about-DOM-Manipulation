@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Summary</title>
+</head>
+
+<body>
+
+    <input id="email-field" type="text" placeholder="Email Address">
+    <button onclick="handleClickGreen()">Click Me : Green</button>
+
+    <script>
+        function handleClickGreen() {
+            document.body.style.backgroundColor = "green";
+        }  //click handler add kora shikhlam
+
+        document.getElementById('email-field').addEventListener('keyup', function (event) {
+            // console.log(event.target); //nspact e pabo,input e kichu dile
+            //jei element take trigger kora hoise shetake dibe
+            console.log(event.target.value); //inspact e value take pabo
+        })
+        //event listener kno add korlam? focus er jonno hole focus, blur er jnno hole blur abr keyup o ache
+    </script>
+</body>
+
+</html>
